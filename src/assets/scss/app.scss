@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./transitions";
+
+html,
+body {
+  @apply overflow-x-hidden scroll-smooth;
+  &.no-scroll {
+    @apply overflow-y-hidden;
+  }
+}
+.container {
+  @apply mx-auto 2xl:px-24 xl:px-20 lg:px-14 md:px-10 px-5;
+}
+.modal {
+  @apply fixed inset-0 flex items-center justify-center bg-black/40 z-50 transition-all duration-300 ease-in-out invisible opacity-0;
+
+  .modal-wrapper {
+    @apply bg-white translate-y-32 h-[80%] lg:h-[90%] opacity-0 invisible mx-auto transition-all duration-500 ease-in-out overflow-y-auto;
+    &.modal-lg {
+      @apply w-[80%] p-5 lg:p-20;
+    }
+  }
+  &.active {
+    @apply visible opacity-100;
+    .modal-wrapper {
+      @apply translate-y-0 visible opacity-100;
+    }
+  }
+}

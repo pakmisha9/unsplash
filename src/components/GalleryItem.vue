@@ -10,7 +10,7 @@
     </div>
     <div class="absolute top-5 right-5 z-30">
       <button @click.prevent="addToFavorites" :class="{ active: item.liked_by_user == true }" class="like">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,98a57.63,57.63,0,0,1-17,41L133.7,229.62a8,8,0,0,1-11.4,0L33,139a58,58,0,0,1,82-82.1L128,69.05l13.09-12.19A58,58,0,0,1,240,98Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ffffff" viewBox="0 0 256 256"><path d="M240,98a57.63,57.63,0,0,1-17,41L133.7,229.62a8,8,0,0,1-11.4,0L33,139a58,58,0,0,1,82-82.1L128,69.05l13.09-12.19A58,58,0,0,1,240,98Z"></path></svg>
       </button>
     </div>
   </router-link>
@@ -61,6 +61,10 @@
       // }
     }
     .like {
+      @apply bg-white rounded flex items-center justify-center w-8 h-8;
+      svg {
+        @apply fill-black;
+      }
       &.active {
         svg {
           @apply fill-red-500;
